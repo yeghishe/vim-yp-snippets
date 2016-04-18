@@ -1,0 +1,13 @@
+snippet reducer
+        import {Map} from 'immutable'
+
+        import * as actions from '${1}'
+
+        export default (state = Map(), action) => {
+          switch (action.type) {
+            case actions.${2}:
+              return ${3}
+          }
+
+          return state
+        }

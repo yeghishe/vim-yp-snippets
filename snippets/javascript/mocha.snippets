@@ -1,0 +1,34 @@
+snippet describe
+        describe('${1}', () => {
+          it('${2}', () => {
+            ${3}
+          })
+        }
+
+snippet it
+        it('${1}', () => {
+          ${2}
+        })
+
+snippet expect
+        expect(${1}).to.${2}
+
+snippet testhelper
+        import jsdom from 'jsdom'
+        import chai from 'chai'
+        import chaiImmutable from 'chai-immutable'
+
+        const doc = jsdom.jsdom('<!doctype html><html><body></body></html>')
+        const win = doc.defaultView
+
+        global.document = doc
+        global.window = win
+
+        Object.keys(window).forEach((key) => {
+          if (!(key in global)) {
+            global[key] = window[key]
+          }
+        })
+
+        chai.use(chaiImmutable)
+        ${1}
