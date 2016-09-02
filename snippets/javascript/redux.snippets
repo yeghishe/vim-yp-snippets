@@ -7,7 +7,17 @@ snippet reducer
           switch (action.type) {
             case actions.${2}:
               return ${3}
+            default:
+              return state
           }
+        }
 
-          return state
+snippet reducerf
+        const ${1} = (state, action) => {
+          switch (action.type) {
+            case '${2}':
+              return ${3}
+            default:
+              return state
+          }
         }
