@@ -1,0 +1,14 @@
+snippet Actor
+    import akka.actor.{ Actor, ActorLogging, Props }
+
+    object ${2:name} {
+      def props: Props = Props(new ${2:name})
+    }
+
+    class ${2:name} extends Actor with ActorLogging {
+      import ${2:name}._
+
+      def receive: Receive = {
+      }
+    }
+
